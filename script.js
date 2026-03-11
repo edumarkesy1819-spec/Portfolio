@@ -206,7 +206,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
    5. SKILL BARS — animate on scroll
 ════════════════════════════════════════════════════════════ */
 (function initSkillBars() {
-  const fills = qsa('.skill-fill');
+  const fills = qsa('.skill-fill, .lang-fill');
   if (!fills.length) return;
 
   const observer = new IntersectionObserver((entries) => {
@@ -400,4 +400,37 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     glow.style.left = e.clientX + 'px';
     glow.style.top = e.clientY + 'px';
   }, { passive: true });
+})();
+
+
+/* ════════════════════════════════════════════════════════════
+   10. CV DROPDOWN
+════════════════════════════════════════════════════════════ */
+(function initCvDropdown() {
+  const wrapper = qs('#cv-dropdown');
+  const toggle = qs('#btn-cv-toggle');
+  if (!wrapper || !toggle) return;
+
+  function open() {
+    wrapper.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function close() {
+    wrapper.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    wrapper.classList.contains('open') ? close() : open();
+  });
+
+  /* Close when clicking outside */
+  document.addEventListener('click', () => close());
+
+  /* Close after selecting a version */
+  qsa('.cv-dropdown-item').forEach(item => {
+    item.addEventListener('click', () => setTimeout(close, 200));
+  });
 })();
