@@ -434,3 +434,21 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     item.addEventListener('click', () => setTimeout(close, 200));
   });
 })();
+
+/* ════════════════════════════════════════════════════════════
+   10. SCROLL PROGRESS BAR
+════════════════════════════════════════════════════════════ */
+(function initScrollProgress() {
+  const bar = qs('#scroll-progress');
+  if (!bar) return;
+
+  const update = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  };
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
