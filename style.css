@@ -1,4 +1,4 @@
-/* ════════════════════════════════════════════════════════════
+﻿/* ════════════════════════════════════════════════════════════
    DESIGN TOKENS & RESET
 ════════════════════════════════════════════════════════════ */
 :root {
@@ -2744,7 +2744,7 @@ a.info-value:hover {
     font-weight: 400;
 }
 /* ------------------------------------------------------------
-   BUGFIX MOBILE - DESATIVAR ANIMA��ES QUE CAUSAM GLITCH E OVERFLOW
+   BUGFIX MOBILE - DESATIVAR ANIMA��ES QUE CAUSAM GLITCH E OVERFLOW
 ------------------------------------------------------------ */
 @media (max-width: 768px) {
     /* Cancela ou reduz muito os orbs e particulas no mobile para parar com o "mexendo sozinho" */
@@ -2756,7 +2756,7 @@ a.info-value:hover {
         display: none !important;
     }
 
-    /* Trava o blob principal para parar as altera��es din�micas de bounding box */
+    /* Trava o blob principal para parar as altera��es din�micas de bounding box */
     .profile-photo {
         animation: none !important;
         border-radius: 50% !important;
@@ -2774,7 +2774,7 @@ a.info-value:hover {
         display: none !important;
     }
 
-    /* Previne estiramento lateral da �rea de experi�ncias onde a foto est� ou orb flutua */
+    /* Previne estiramento lateral da �rea de experi�ncias onde a foto est� ou orb flutua */
     .profile-photo-section {
         overflow: hidden;
         width: 100%;
