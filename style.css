@@ -2801,18 +2801,15 @@ a.info-value:hover {
 
     .profile-photo {
         animation: blobMorphShape 14s ease-in-out infinite !important;
-        border-radius: 48% 52% 44% 56% / 62% 58% 42% 38% !important;
         will-change: border-radius;
     }
 
     .profile-blob-placeholder {
         animation: blobMorphShape 14s ease-in-out infinite !important;
-        border-radius: 48% 52% 44% 56% / 62% 58% 42% 38% !important;
     }
 
     .profile-blob-ring {
         animation: blobMorphShape 14s ease-in-out infinite, blobGradient 6s ease infinite !important;
-        border-radius: 48% 52% 44% 56% / 62% 58% 42% 38% !important;
         display: block !important;
         will-change: border-radius, background-position;
     }
