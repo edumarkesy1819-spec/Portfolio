@@ -489,7 +489,7 @@ section {
 .hero {
     position: relative;
     min-height: 100vh;
-    min-height: 100dvh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2742,4 +2742,46 @@ a.info-value:hover {
     font-size: 0.72rem;
     color: var(--c-text-3);
     font-weight: 400;
+}
+/* ------------------------------------------------------------
+   BUGFIX MOBILE - DESATIVAR ANIMAÇÕES QUE CAUSAM GLITCH E OVERFLOW
+------------------------------------------------------------ */
+@media (max-width: 768px) {
+    /* Cancela ou reduz muito os orbs e particulas no mobile para parar com o "mexendo sozinho" */
+    .hero-orb,
+    .ambient-orb,
+    .blob-orbit,
+    .blob-particle {
+        animation: none !important;
+        display: none !important;
+    }
+
+    /* Trava o blob principal para parar as alterações dinâmicas de bounding box */
+    .profile-photo {
+        animation: none !important;
+        border-radius: 50% !important;
+    }
+
+    .profile-blob-placeholder {
+        animation: none !important;
+        border-radius: 50% !important;
+    }
+
+    .profile-blob-ring,
+    .profile-blob-ring::after {
+        animation: none !important;
+        border-radius: 50% !important;
+        display: none !important;
+    }
+
+    /* Previne estiramento lateral da área de experiências onde a foto está ou orb flutua */
+    .profile-photo-section {
+        overflow: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    section {
+        overflow-x: hidden;
+    }
 }
