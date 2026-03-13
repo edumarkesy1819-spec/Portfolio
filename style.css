@@ -73,6 +73,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
 }
 
 body {
@@ -81,6 +82,8 @@ body {
     color: var(--c-text);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+    width: 100%;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -486,6 +489,7 @@ section {
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
