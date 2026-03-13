@@ -2791,3 +2791,34 @@ a.info-value:hover {
         overflow-x: hidden;
     }
 }
+
+/* Reativa animacao do blob de perfil no mobile com seguranca */
+@media (max-width: 768px) {
+    .profile-blob-wrap {
+        overflow: hidden;
+        contain: layout;
+    }
+
+    .profile-photo {
+        animation: blobMorphShape 14s ease-in-out infinite !important;
+        border-radius: 48% 52% 44% 56% / 62% 58% 42% 38% !important;
+        will-change: border-radius;
+    }
+
+    .profile-blob-placeholder {
+        animation: blobMorphShape 14s ease-in-out infinite !important;
+        border-radius: 48% 52% 44% 56% / 62% 58% 42% 38% !important;
+    }
+
+    .profile-blob-ring {
+        animation: blobMorphShape 14s ease-in-out infinite, blobGradient 6s ease infinite !important;
+        border-radius: 48% 52% 44% 56% / 62% 58% 42% 38% !important;
+        display: block !important;
+        will-change: border-radius, background-position;
+    }
+
+    .profile-blob-ring::after {
+        animation: none !important;
+        display: none !important;
+    }
+}
